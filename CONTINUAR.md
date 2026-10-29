@@ -42,9 +42,12 @@ nomes de pessoas nem detalhes de configuração interna para cá.
    Objetivo estratégico e Patrocinador ocultas.
 4. Slide 3 traz o recorte do organograma (`site/img/organograma-superintendencias.png`,
    gerado de `organograma.jpeg` com `crop=1310:335:500:632`); a SUTID é
-   superintendência funcional. O organograma tem SUPEP, e a lista de hom
-   tem SUINV: divergência a corrigir na lista Área demandante do
-   `artesp-pmo`, não no deck. Slide 13: cartões e itens 1 a 4 do roteiro
+   superintendência funcional. O organograma é a fonte dos nomes
+   (decisão de 29/10/2026). Branch `fix/supep-acronym` no `artesp-pmo`
+   (worktree `.worktrees/supep`) troca SUINV por SUPEP e "Superintendência
+   Rodoviária" por "Superintendência de Rodovias"; falta merge, renomear à
+   mão o nó `portfolio-suinv` em hom (ver handoff), apply e refazer
+   `portfolio.png`. Slide 13: cartões e itens 1 a 4 do roteiro
    abrem páginas de hom em nova aba.
 5. Produção está na release `13202f2` (um modelo só); os sete modelos estão
    só em homologação. Promover antes da apresentação ou demonstrar em hom.
