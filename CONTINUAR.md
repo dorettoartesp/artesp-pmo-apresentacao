@@ -40,7 +40,13 @@ nomes de pessoas nem detalhes de configuração interna para cá.
    projeto modelo = não, painel de filtros fechado, menu lateral
    recolhido, colunas Favorito, Público, Criado em, Armazenamento,
    Objetivo estratégico e Patrocinador ocultas.
-4. Produção está na release `13202f2` (um modelo só); os sete modelos estão
+4. Slide 3 traz o recorte do organograma (`site/img/organograma-superintendencias.png`,
+   gerado de `organograma.jpeg` com `crop=1310:335:500:632`); a SUTID é
+   superintendência funcional. O organograma tem SUPEP, e a lista de hom
+   tem SUINV: divergência a corrigir na lista Área demandante do
+   `artesp-pmo`, não no deck. Slide 13: cartões e itens 1 a 4 do roteiro
+   abrem páginas de hom em nova aba.
+5. Produção está na release `13202f2` (um modelo só); os sete modelos estão
    só em homologação. Promover antes da apresentação ou demonstrar em hom.
 
 **Regras deste repositório.** Um HTML por slide em `deck/project/slides/`,
