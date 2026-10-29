@@ -8,7 +8,7 @@ repositório. Ele descreve o estado do trabalho e o que falta.
 Estou continuando o deck `artesp-pmo-apresentacao` em outra máquina. Leia o
 `README.md` e este arquivo antes de agir.
 
-**Estado.** Os 12 slides estão prontos e publicados em
+**Estado.** Os 13 slides estão prontos e publicados em
 `https://dorettoartesp.github.io/artesp-pmo-apresentacao/` (branch
 `gh-pages`, gerada por `make publish`). O texto está em registro formal e
 técnico; mantenha esse registro em qualquer alteração. O design e o plano da
@@ -18,7 +18,7 @@ nomes de pessoas nem detalhes de configuração interna para cá.
 
 **O que falta.**
 
-1. Nada bloqueia a publicação: as três capturas estão em `site/img/`
+1. Nada bloqueia a publicação: as quatro capturas estão em `site/img/` (`backlog-sutid.png` é a do slide 6, Scrum)
    (feitas em 29/10/2026 na homologação, com os projetos de exemplo da
    release `f134b98`), o slide 4 mostra os sete modelos e o site foi
    publicado. Para refazer uma captura: tela cheia 1920×1080, menu lateral
