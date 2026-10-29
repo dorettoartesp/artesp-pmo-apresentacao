@@ -18,26 +18,21 @@ nomes de pessoas nem detalhes de configuração interna para cá.
 
 **O que falta.**
 
-1. Capturas de tela, em `site/img/`, com estes nomes exatos:
-   `scrum-sutid.png` (quadro Scrum de um projeto da SUTID),
-   `gantt-surod.png` (Gantt de um projeto da SUROD) e
-   `portfolio.png` (lista de projetos do Portfólio ARTESP). O conversor troca
-   os espaços reservados pelas imagens sozinho. Proporções: 800×450 nas duas
-   primeiras, 880×458 na terceira (a imagem é recortada por `object-fit:cover`
-   a partir do canto superior esquerdo; capture a tela cheia). Depois de
-   colocar as imagens: tirar o trecho "· capturas a atualizar" do rodapé de
-   `deck/project/slides/lado-a-lado.html`.
+1. Nada bloqueia a publicação: as três capturas estão em `site/img/`
+   (feitas em 29/10/2026 na homologação, com os projetos de exemplo da
+   release `f134b98`), o slide 4 mostra os sete modelos e o site foi
+   publicado. Para refazer uma captura: tela cheia 1920×1080, menu lateral
+   recolhido, colunas "Objetivo estratégico" e "Patrocinador" ocultas na
+   lista de projetos; recortar a partir do canto superior esquerdo em
+   16:9 (as duas primeiras) ou 880:458 (a terceira); `make build`.
 2. Fluxo para publicar: `make check` (build + guarda de texto público +
    testes), conferir com `make shots` e ler os PNGs em `output/shots/`,
    `git commit`, `make publish`. O `publish` recusa `site/` não commitado.
-3. Melhorias pequenas apontadas em revisão, ainda não feitas; faça só se eu
-   pedir: rodapé do slide 9 ("OpenProject · software livre, GPL v3" em vez
-   de "Community Edition"); `box-shadow:none` no bloco reservado em
-   `tools/build-site.py`; `tests/__init__.py` para `python3 -m unittest`
-   descobrir os testes; "somente na intranet" no rodapé de `no-ar.html`;
-   retirar o numeral "01" de `decisao.html`; ícone `Link` em vez de `Check`
-   no cartão "Grupos do AD" de `transparencia.html`; título do slide 4 menos
-   parecido com o da capa.
+3. Em aberto, a decidir no `artesp-pmo` antes de refletir aqui: um
+   portfólio por superintendência (nós sob o Portfólio ARTESP). Se for
+   adotado, refazer `portfolio.png` e rever os slides 3 e 4.
+4. Produção está na release `13202f2` (um modelo só); os sete modelos estão
+   só em homologação. Promover antes da apresentação ou demonstrar em hom.
 
 **Regras deste repositório.** Um HTML por slide em `deck/project/slides/`,
 ordem em `deck/project/deck.json`, moldura copiada do `artesp-estrategia`.
