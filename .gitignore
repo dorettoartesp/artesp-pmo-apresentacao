@@ -3,3 +3,4 @@
 output/shots/
 .superpowers/
 __pycache__/
+PROMPT-*.md
