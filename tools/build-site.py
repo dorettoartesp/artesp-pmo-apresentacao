@@ -41,6 +41,7 @@ ICONS = {
     "Users": '<circle cx="9" cy="7" r="4"/><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
     "Activity": '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
     "Verified": '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>',
+    "Road": '<path d="M4 21 9 3M20 21 15 3M12 7v2M12 12v3M12 18v3"/>',
     "Code": '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
     "Play": '<polygon points="5 3 19 12 5 21"/>',
     "Book": '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
@@ -118,7 +119,7 @@ def icon(tag):
 
 CAPTURA_STYLE = ("display:flex;align-items:center;justify-content:center;background:#F4F4F4;"
                  "border:2px dashed #B0B0B0;border-radius:12px;color:#6E6E6E;"
-                 "font-family:'Inter', Arial, sans-serif;font-size:24px")
+                 "font-family:'Inter', Arial, sans-serif;font-size:24px;box-shadow:none")
 
 
 def capture(tag, site_dir):
