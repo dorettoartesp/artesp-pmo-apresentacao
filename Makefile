@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help build serve shots status
+.PHONY: help build check serve shots status publish
 
 CHROME ?= google-chrome
 SITE   := site
@@ -10,6 +10,12 @@ help: ## Lista os comandos
 
 build: ## Gera site/index.html a partir de deck/ (fonte do conteúdo)
 	python3 tools/build-site.py deck $(SITE)/index.html
+
+check: build ## Falha se o site contiver texto que não pode ir ao público
+	@! grep -inE 'enterprise|objetivo 04|plano estrat|token|desbloque' $(SITE)/index.html \
+	  || { echo "texto proibido em $(SITE)/index.html"; exit 1; }
+	@python3 -m unittest tests.test_build_site
+	@echo "ok"
 
 serve: ## Serve o site localmente em http://localhost:8080
 	cd $(SITE) && python3 -m http.server 8080

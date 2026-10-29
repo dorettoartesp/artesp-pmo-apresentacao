@@ -19,6 +19,7 @@ Proposta de adoção do OpenProject como ferramenta institucional de acompanhame
 ```bash
 make build   # deck/ -> site/index.html
 make serve   # http://localhost:8080
+make check   # build + guarda de texto público + testes
 make shots   # um PNG por slide em output/shots/ (requer google-chrome)
 ```
 
