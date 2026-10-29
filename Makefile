@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help build check serve shots status publish
+.PHONY: help build check site-clean serve shots status publish
 
 CHROME ?= google-chrome
 SITE   := site
@@ -29,7 +29,10 @@ shots: ## Renderiza todos os slides em PNG (output/shots/) para conferência
 	    "file://$(CURDIR)/$(SITE)/index.html#/$$i" >/dev/null 2>&1; i=$$((i+1)); done; \
 	echo "$$n slides em $(SHOTS)/"
 
-publish: ## Publica site/ na branch gh-pages (origem do GitHub Pages)
+site-clean: ## Falha se site/ tiver alterações não commitadas (publish envia a árvore commitada)
+	@git diff --quiet HEAD -- $(SITE) || { echo "site/ tem alterações não commitadas: rode make check e commite"; exit 1; }
+
+publish: check site-clean ## Publica site/ na branch gh-pages (origem do GitHub Pages)
 	git subtree split --prefix site -b gh-pages
 	git push -f origin gh-pages
 	git branch -D gh-pages
