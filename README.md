@@ -12,7 +12,6 @@ Proposta de adoção do OpenProject como ferramenta institucional de acompanhame
 | `site/` | **O que o Pages serve.** `index.html` é gerado a partir de `deck/`; `css/artesp.css` é a moldura com a identidade ARTESP; `vendor/reveal/` é o reveal.js 5.1.0; `img/` tem as logos e as capturas de tela. |
 | `tools/build-site.py` | Conversor `deck/` → `site/index.html`. Troca os elementos próprios do formato de origem (`x-connector`, `x-shape`, `x-icon`, `x-capture`) por SVG inline ou `<img>`. |
 | `tests/` | Testes do conversor (`python3 -m unittest`). |
-| `docs/superpowers/` | Design e plano da apresentação. |
 
 ## Fluxo de trabalho
 
