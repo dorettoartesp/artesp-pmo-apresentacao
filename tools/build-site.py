@@ -10,6 +10,10 @@ Uso: python3 tools/build-site.py <pasta-do-deck> [site/index.html]
 O formato de origem usa elementos próprios (`x-connector`, `x-shape`, `x-icon`)
 e imagens `/_blob/<id>`; aqui eles viram SVG inline e arquivos em `site/img/`.
 Todo o resto (flex, grid, estilos inline) é CSS comum e passa sem alteração.
+
+`x-capture` é deste deck: uma captura de tela que ainda pode não existir.
+Com o arquivo em `site/img/`, vira `<img>`; sem ele, um bloco "captura: <nome>"
+com o mesmo tamanho, para o slide não precisar ser editado depois.
 """
 import json
 import re
@@ -112,6 +116,22 @@ def icon(tag):
             % (style, body))
 
 
+CAPTURA_STYLE = ("display:flex;align-items:center;justify-content:center;background:#F4F4F4;"
+                 "border:2px dashed #B0B0B0;border-radius:12px;color:#6E6E6E;"
+                 "font-family:'Inter', Arial, sans-serif;font-size:24px")
+
+
+def capture(tag, site_dir):
+    """<x-capture src alt style> -> <img> se o arquivo existe em site/, senão bloco reservado."""
+    src = attr(tag, "src", "")
+    alt = attr(tag, "alt", "")
+    style = attr(tag, "style", "")
+    if (site_dir / src).is_file():
+        return '<img src="%s" alt="%s" style="%s">' % (src, alt, style)
+    return ('<div class="captura" aria-label="%s" style="%s;%s">captura: %s</div>'
+            % (alt, style, CAPTURA_STYLE, src.rsplit("/", 1)[-1]))
+
+
 class _Balance(HTMLParser):
     """Confere se as tags de um slide fecham na ordem em que abrem."""
     VOID = {"img", "br", "hr", "meta", "link", "line", "path", "polygon", "polyline", "circle", "ellipse", "rect"}
@@ -142,11 +162,12 @@ def check_balance(sid, html):
                          % (sid, p.stack, p.errors))
 
 
-def convert(html):
+def convert(html, site_dir):
     # elementos próprios do formato de origem
     html = re.sub(r'<x-connector\b[^>]*>\s*</x-connector>', lambda m: connector(m.group(0)), html)
     html = re.sub(r'<x-shape\b[^>]*>\s*</x-shape>', lambda m: shape(m.group(0)), html)
     html = re.sub(r'<x-icon\b[^>]*>\s*</x-icon>', lambda m: icon(m.group(0)), html)
+    html = re.sub(r'<x-capture\b[^>]*>\s*</x-capture>', lambda m: capture(m.group(0), site_dir), html)
     # imagens do armazenamento do artifact
     html = re.sub(r'/_blob/([0-9a-f]{32})', lambda m: BLOBS[m.group(1)], html)
     # fundo decorativo (SVG pinado cobrindo a lona) fica atrás do conteúdo em fluxo
@@ -174,7 +195,7 @@ def main():
         f = SRC / "project" / "slides" / ("%s.html" % sid)
         src = f.read_text(encoding="utf-8")
         check_balance(sid, src)
-        slides.append(convert(src))
+        slides.append(convert(src, OUT.parent))
     tpl = (OUT.parent / "template.html").read_text(encoding="utf-8")
     page = tpl.replace("{{TITLE}}", title).replace("{{SLIDES}}", "".join(slides))
     OUT.write_text(page, encoding="utf-8")
