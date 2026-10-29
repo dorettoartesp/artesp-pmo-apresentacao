@@ -29,7 +29,13 @@ nomes de pessoas nem detalhes de configuração interna para cá.
    testes), conferir com `make shots` e ler os PNGs em `output/shots/`,
    `git commit`, `make publish`. O `publish` recusa `site/` não commitado.
 3. Portfólios por superintendência: feitos no `artesp-pmo` (release
-   `55b346e`, em hom desde 29/10/2026). Capturas refeitas nesse estado.
+   `55b346e`; correções da revisão de hom na release `8e3576f`, em hom
+   desde 29/10/2026: colunas nas vistas, quadros por sprint só com status
+   do baseline, burndown em degraus). Capturas refeitas nesse estado
+   (`portfolio.png`, `scrum-sutid.png`, `backlog-sutid.png`). O burndown
+   ainda extrapola a altura da tela; o roteiro não o mostra. Projetos de
+   teste criados à mão em hom (`teste`, `teste2`) foram ocultados por JS
+   antes da captura.
    Para a lista do portfólio: `/projects` com filtros ativo = sim e
    projeto modelo = não, painel de filtros fechado, menu lateral
    recolhido, colunas Favorito, Público, Criado em, Armazenamento,
