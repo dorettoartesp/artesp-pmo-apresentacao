@@ -18,7 +18,7 @@ nomes de pessoas nem detalhes de configuração interna para cá.
 
 **O que falta.**
 
-1. Nada bloqueia a publicação: as quatro capturas estão em `site/img/` (`backlog-sutid.png` é a do slide 6, Scrum)
+1. Nada bloqueia a publicação: as quatro capturas estão em `site/img/` (`backlog-sutid.png` é a do slide 6, Scrum, projeto `exemplo-scrum-contratos`)
    (feitas em 29/10/2026 na homologação, com os projetos de exemplo da
    release `f134b98`), o slide 4 mostra os sete modelos e o site foi
    publicado. Para refazer uma captura: tela cheia 1920×1080, menu lateral
@@ -28,9 +28,12 @@ nomes de pessoas nem detalhes de configuração interna para cá.
 2. Fluxo para publicar: `make check` (build + guarda de texto público +
    testes), conferir com `make shots` e ler os PNGs em `output/shots/`,
    `git commit`, `make publish`. O `publish` recusa `site/` não commitado.
-3. Em aberto, a decidir no `artesp-pmo` antes de refletir aqui: um
-   portfólio por superintendência (nós sob o Portfólio ARTESP). Se for
-   adotado, refazer `portfolio.png` e rever os slides 3 e 4.
+3. Portfólios por superintendência: feitos no `artesp-pmo` (release
+   `55b346e`, em hom desde 29/10/2026). Capturas refeitas nesse estado.
+   Para a lista do portfólio: `/projects` com filtros ativo = sim e
+   projeto modelo = não, painel de filtros fechado, menu lateral
+   recolhido, colunas Favorito, Público, Criado em, Armazenamento,
+   Objetivo estratégico e Patrocinador ocultas.
 4. Produção está na release `13202f2` (um modelo só); os sete modelos estão
    só em homologação. Promover antes da apresentação ou demonstrar em hom.
 
